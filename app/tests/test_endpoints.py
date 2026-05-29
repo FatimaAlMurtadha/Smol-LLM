@@ -27,7 +27,7 @@ def test_ask_before_upload():
         }
     )
 
-    assert response.status_code == 400
+    assert response.status_code == 404
     assert response.json()["detail"] == "Dataset must be uploaded before asking questions"
 
 # This test checks the /data/upload endpoint when an invalid file is uploaded. 
