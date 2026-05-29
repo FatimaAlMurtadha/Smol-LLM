@@ -17,7 +17,7 @@ class PromptInput(BaseModel):
     Contains the user question and dataset statistics.
     """
     question: str = Field(min_length=1)
-    stats: Dict[str, Dict[str, dict[str, float | int | str]]]  # column -> {stat_name: value}
+    stats: dict  # column -> {stat_name: value}
 
 # The PromptOutput model represents the output of a prompt generation process, containing the generated prompt as a string. This model can be used to structure the response from an API endpoint that generates prompts based on input data.
 class PromptOutput(BaseModel):
