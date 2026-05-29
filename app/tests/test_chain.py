@@ -100,7 +100,7 @@ def test_runnable_sequence():
     result = chain.invoke(3)
     assert result == 8  # (3 + 1) * 2
 
-@patch("app.chain.steps.LLMRunner.invoke")
+@patch("app.chain.pipeline.LLMRunner.invoke")
 def test_oracle_chain_full(mock_llm):
 
     mock_llm.return_value = LLMOutput(raw_text="Answer: 85")
