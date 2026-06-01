@@ -18,8 +18,8 @@ Denna kedja bygger prompten, kör modellen och extraherar ett kort och tydligt s
 1. Klona projektet
 
 `bash
-git clone https://github.com/FatimaAlMurtadha/SmoLLM.git
-cd SmoLLM
+git clone https://github.com/FatimaAlMurtadha/Smol-LLM.git
+cd Smol-LLM
 `
 
 2. Synka och installera alla beroenden via uv
