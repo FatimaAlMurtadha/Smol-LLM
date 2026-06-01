@@ -24,11 +24,42 @@ uv run pytest tests/test_endpoints.py -v
 
 
 
+# the flow : PromptBuilder -> LLMRunner -> ResponseParser -> main.py
 
-
-
-# coding train youtube evaluationary algorithem - genaric algorithem
 
 # QUESTIONS:
 - What is the average final score?
 - Which student behaviors show the strongest positive and negative relationship with academic performance?
+
+- empty CSV
+- wrong extension
+- empty question
+- malformed CSV
+- ask before upload
+
+
+
+— Security
+
+
+.env
+CSV upload risks
+prompt injection
+— GDPR
+
+
+personal data
+no encryption
+no deletion policy
+— AI risks
+
+
+hallucinations
+small model limitations
+bias
+— Design choices
+
+
+Runnable chain
+why modularity matters
+testing benefits
