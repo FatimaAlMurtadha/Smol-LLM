@@ -1,7 +1,7 @@
 # FastAPI-app, endpoints
 from fastapi import FastAPI, HTTPException, UploadFile, File
 import logging
-from app.data import load_csv, get_stats
+from app.data import load_csv, get_stats, validate_file_size, MAX_UPLOAD_SIZE_BYTES
 from app.schemas import (
     AskRequest,
     PromptInput
@@ -23,7 +23,7 @@ MODEL_NAME = "MockModel"
 @app.get("/")
 def health():
     """Simple health check endpoint to verify the API is running."""
-    return {"status": "OK"} 
+    return {"status": "OK"}
 
 # Endpoint to upload a CSV file. It accepts a file upload, checks if the file is a CSV, and if so, loads the data using the load_csv function. 
 # The endpoint returns metadata about the loaded dataset, such as the number of rows, columns, and data types. If the uploaded file is not a CSV, it raises an HTTP 400 error.
@@ -42,8 +42,17 @@ async def upload(file: UploadFile = File(...)):
             f"Rejected non-CSV file: {file.filename}"
         )
         logger.info(f"CSV loading failed: {file.filename}")
-        
+
         raise HTTPException(400, "Only CSV allowed")
+
+    try:
+        validate_file_size(file.file)
+
+    except ValueError as exc:
+        logger.warning(
+            f"Rejected oversized upload: {file.filename}"
+        )
+        raise HTTPException(status_code=413, detail=str(exc))
 
     try:
 

@@ -1,9 +1,41 @@
 import pandas as pd
 from pandas import DataFrame
-from typing import Optional, Dict, Any
+from typing import Optional, Dict, Any, BinaryIO
+
+# Maximum allowed upload size for CSV files.
+MAX_UPLOAD_SIZE_BYTES = 5 * 1024 * 1024  # 5 MB
 
 # Global in‑memory dataset
 DATASET: Optional[DataFrame] = None
+
+
+def format_bytes(size: int) -> str:
+    """Convert a byte count into a human-readable string."""
+    if size < 1024:
+        return f"{size} bytes"
+    for unit in ["KB", "MB", "GB"]:
+        size /= 1024.0
+        if size < 1024.0:
+            return f"{size:.1f} {unit}"
+    return f"{size:.1f} TB"
+
+
+def get_file_size(file: BinaryIO) -> int:
+    """Return the current size of a file-like object in bytes."""
+    current_position = file.tell()
+    file.seek(0, 2)
+    size = file.tell()
+    file.seek(current_position)
+    return size
+
+
+def validate_file_size(file: BinaryIO, max_size: int = MAX_UPLOAD_SIZE_BYTES) -> None:
+    """Raise a ValueError if the uploaded file exceeds the allowed size."""
+    size = get_file_size(file)
+    if size > max_size:
+        raise ValueError(
+            f"File size {format_bytes(size)} exceeds maximum allowed size of {format_bytes(max_size)}."
+        )
 
 # Function to load a CSV file and return the DataFrame.
 def load_csv(file) -> Dict[str, Any]:
