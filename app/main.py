@@ -20,7 +20,7 @@ MODEL_NAME = "MockModel"
 
 # Endpoint to upload a CSV file. It accepts a file upload, loads the CSV data using the load_csv function, and returns the statistics of the loaded dataset. 
 # The DATA_LOADED variable is set to True after successfully loading the dataset.
-@app.get("/health")
+@app.get("/")
 def health():
     """Simple health check endpoint to verify the API is running."""
     return {"status": "OK"} 
