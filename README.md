@@ -57,7 +57,9 @@ Swagger
 Gå till /data/upload -> välj en .csv -> kör.
 
 
-OBS: Du kan ladda up et exampel på dataset här: https://www.kaggle.com/datasets/sarveshchhetri/student-lifestyle-vs-academic-performance-dataset/data [ELLER använda det datasetet i rooten](/student_performance_finalscore.csv)
+OBS: Du kan ladda up et exampel på dataset här: https://www.kaggle.com/datasets/sarveshchhetri/student-lifestyle-vs-academic-performance-dataset/data
+
+[ELLER använda det datasetet i rooten](/student_performance_finalscore.csv)
 
 curl‑exempel
 

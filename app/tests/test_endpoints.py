@@ -1,13 +1,14 @@
 from fastapi.testclient import TestClient
 from app.main import app
 from unittest.mock import patch
+from app.data import MAX_UPLOAD_SIZE_BYTES
 from app.schemas import LLMOutput, ParsedAnswer
 
 client = TestClient(app)
 
 
 def test_health():
-    response = client.get("/health")
+    response = client.get("/")
     assert response.status_code == 200
     assert response.json() == {"status": "OK"}
 
@@ -43,6 +44,18 @@ def test_upload_invalid_file():
     )
 
     assert response.status_code == 400
+
+# This test checks the /data/upload endpoint when an oversized CSV file is uploaded.
+def test_upload_oversized_file():
+    big_blob = b"a" * (MAX_UPLOAD_SIZE_BYTES + 1)
+
+    response = client.post(
+        "/data/upload",
+        files={"file": ("big.csv", big_blob, "text/csv")}
+    )
+
+    assert response.status_code == 413
+    assert "exceeds maximum allowed size" in response.json()["detail"]
 
 # This test checks the /data/upload endpoint when an empty CSV file is uploaded.
 def test_upload_empty_csv():
