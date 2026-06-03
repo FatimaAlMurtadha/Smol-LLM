@@ -280,10 +280,10 @@ app/
  ├── chain/
  │    ├── runnable.py      # Runnable-bas och kedjelogik
  │    ├── steps.py         # PromptBuilder, LLMRunner, ResponseParser
- │    └── pipeline.py      # oracle_chain
-tests/
- ├── test_chain.py
- ├── test_endpoints.py
+ │    └── pipeline.py  
+ ├── tests/
+ │    ├── test_chain.py
+ │    ├── test_endpoints.py    # oracle_chain
  └── ...
 `
 
