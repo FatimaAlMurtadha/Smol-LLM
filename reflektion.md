@@ -24,10 +24,11 @@ Applikationen accepterar CSV-filer som laddas upp av användaren. Detta innebär
 
 I min implementation hanterade jag detta genom:
 
-- att endast acceptera filer som slutar med .csv  
-- att returnera 400 om filen inte går att läsa  
-- att aldrig spara filen på disk — den hålls endast i minnet  
-- att logga alla uppladdningar för spårbarhet  
+- att endast acceptera filer som slutar med .csv.
+- att returnera 400 om filen inte går att läsa.
+- att aldrig spara filen på disk — den hålls endast i minnet.
+- att logga alla uppladdningar för spårbarhet.
+- att begränsa uppladdade filer med 5MB max.
 
 
 ### Prompt injection
