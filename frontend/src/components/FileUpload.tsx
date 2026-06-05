@@ -17,14 +17,14 @@ export function FileUpload({ onStats }: FileUploadProps) {
 
   return (
     <div className="card">
-      <h2>Upload CSV</h2>
+      <h2>Ladda upp en CSV fil</h2>
       <input
         type="file"
         accept=".csv"
         onChange={(e) => setFile(e.target.files?.[0] || null)}
       />
       <button className="btn" onClick={handleUpload}>
-        Upload
+        Uppladda
       </button>
     </div>
   );
