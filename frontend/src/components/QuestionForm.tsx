@@ -17,7 +17,7 @@ export function QuestionForm({ onAnswer }: QuestionFormProps) {
   return (
     <section aria-label="Ask a question about the data">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="question-input">Fråga</label>
+        <label htmlFor="question-input">SKRIV DIN FRÅGA HÄR:</label>
         <input
           id="question-input"
           className="input"
@@ -26,7 +26,7 @@ export function QuestionForm({ onAnswer }: QuestionFormProps) {
           onChange={(e) => setQuestion(e.target.value)}
         />
         <button type="submit" className="btn-secondary">
-          Fråga
+          SKICKA FRÅGAN
         </button>
       </form>
     </section>

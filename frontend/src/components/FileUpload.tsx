@@ -20,7 +20,7 @@ export function FileUpload({ onStats }: FileUploadProps) {
     <section className="Upload CSV data">
       <form onSubmit={handleSubmit}>
         <label htmlFor="csv-file" className="btn-choose file">
-          Välj en CSV fil
+          VÄLJ EN CSV FIL
         </label>
         <input
           id="csv-file"
@@ -29,7 +29,7 @@ export function FileUpload({ onStats }: FileUploadProps) {
           onChange={(e) => setFile(e.target.files?.[0] || null)}
         />
         <button type="submit" className="btn">
-          Ladda upp
+          LADD A UPP
         </button>
       </form>
     </section>

@@ -30,13 +30,24 @@
 .container {
     width: 100%;
     max-width: 800px;
-    background: #ffffff;
+    background: rgba(255, 255, 255, 0.188);;
     padding: 2rem;
     border-radius: 16px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
     margin-bottom: 2rem;
 }
-
+.data-section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 1rem;
+}
+#qa-section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 1rem;
+}
 /* Titles */
 .title {
     font-size: 2rem;
@@ -71,7 +82,7 @@ footer {
     margin-top: auto;
     padding: 1rem 0;
     text-align: center;
-    color: #dfe6e9;
+    color: #b689f5;
 
     .container {
         background: transparent;

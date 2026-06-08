@@ -16,7 +16,7 @@ section[aria-label="Ask a question about the data"] {
 
     label {
         font-weight: 600;
-        color: #2d3436;
+        color: #c0ecf8;
         font-size: 1rem;
     }
 
@@ -24,10 +24,10 @@ section[aria-label="Ask a question about the data"] {
     .input {
         padding: 0.75rem 1rem;
         border-radius: 10px;
-        border: 2px solid #dfe6e9;
+        border: 2px solid #dfe6e99a;
         font-size: 1rem;
         transition: border-color 0.2s ease, box-shadow 0.2s ease;
-        background: #ffffff;
+        background: #08bdea09;
 
         &:focus {
             border-color: #6c5ce7;

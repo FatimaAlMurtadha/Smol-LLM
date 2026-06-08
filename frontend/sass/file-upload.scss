@@ -4,6 +4,7 @@
    File Upload Component Styling
    ================================ */
 
+
 /*Hidden default input value */
 input[type="file"] {
     position: absolute;
@@ -28,15 +29,19 @@ input[type="file"] {
 
     &:hover {
         background: darken(#6c5ce7, 8%);
+        border-color: #6c5ce7;
+            box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.2);
+            outline: none;
     }
 }
 
 /* Upload Button */
 .btn {
     padding: 0.75rem 1.4rem;
-    background: #00cec9;
+    background: #1d7e7d;
     color: #fff;
     border-radius: 10px;
+    border: 2px solid #dfe6e99a;
     cursor: pointer;
     font-weight: 600;
     margin-left: 1rem;
@@ -58,4 +63,13 @@ input[type="file"] {
         align-items: center;
         gap: 1rem;
     }
+}
+.container .upload-section,
+.container .Upload {
+    background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 16px;
+        padding: 2rem;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
