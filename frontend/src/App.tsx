@@ -1,9 +1,9 @@
-import './App.css'
 import { useState } from 'react';
 import { FileUpload } from './components/FileUpload';
 import type { ColumnStats } from './interfaces/stats';
 import { QuestionForm } from './components/QuestionForm';
 import { AnswerBox } from './components/AnswerBox';
+import '../sass/index.scss';
 
 function App() {
   const [stats, setStats] = useState<Record<string, ColumnStats> | null>(null);

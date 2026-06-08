@@ -1,0 +1,61 @@
+@use 'sass:color';
+
+/* ================================
+   File Upload Component Styling
+   ================================ */
+
+/*Hidden default input value */
+input[type="file"] {
+    position: absolute;
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+/* Choose File Button */
+.btn-choose {
+    display: inline-block;
+    padding: 0.75rem 1.4rem;
+    background: #6c5ce7;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+        background: darken(#6c5ce7, 8%);
+    }
+}
+
+/* Upload Button */
+.btn {
+    padding: 0.75rem 1.4rem;
+    background: #00cec9;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-left: 1rem;
+    transition: background 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+        background: color.adjust( #00cec9, $lightness: -8%);
+    }
+}
+
+/* Format the section */
+.upload-section,
+.Upload {
+    margin: 1.5rem 0;
+
+    form {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+}
