@@ -24,7 +24,6 @@ export function QuestionForm({ onAnswer }: QuestionFormProps) {
           type="text"
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
-          placeholder="What is the average score?"
         />
         <button type="submit" className="btn-secondary">
           Fråga
