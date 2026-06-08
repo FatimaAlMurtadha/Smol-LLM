@@ -9,23 +9,27 @@ interface FileUploadProps {
 export function FileUpload({ onStats }: FileUploadProps) {
   const [file, setFile] = useState<File | null>(null);
 
-  async function handleUpload() {
-    if (!file) return;
-    const result = await uploadCSV(file);
-    onStats(result.stats);
-  }
+   async function handleSubmit(e: React.FormEvent) {
+     e.preventDefault();
+     if (!file) return;
+     const result = await uploadCSV(file);
+     onStats(result.stats);
+   }
 
   return (
-    <div className="card">
-      <h2>Ladda upp en CSV fil</h2>
-      <input
-        type="file"
-        accept=".csv"
-        onChange={(e) => setFile(e.target.files?.[0] || null)}
-      />
-      <button className="btn" onClick={handleUpload}>
-        Uppladda
-      </button>
-    </div>
+    <section className="Upload CSV data">
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="csv-file">Välj en CSV fil</label>
+        <input
+          id="csv-file"
+          type="file"
+          accept=".csv"
+          onChange={(e) => setFile(e.target.files?.[0] || null)}
+        />
+        <button type="submit" className="btn">
+          Ladda upp
+        </button>
+      </form>
+    </section>
   );
 }
