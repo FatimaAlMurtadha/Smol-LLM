@@ -17,7 +17,7 @@ export function FileUpload({ onStats }: FileUploadProps) {
    }
 
   return (
-    <section className="Upload CSV data">
+    <section className="upload-section">
       <form onSubmit={handleSubmit}>
         <label htmlFor="csv-file" className="btn-choose file">
           VÄLJ EN CSV FIL
