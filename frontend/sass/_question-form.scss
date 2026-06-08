@@ -1,0 +1,59 @@
+@use "sass:color";
+
+/* ================================
+   Question Form Styling
+   ================================ */
+
+section[aria-label="Ask a question about the data"] {
+    margin: 2rem 0;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        max-width: 500px;
+    }
+
+    label {
+        font-weight: 600;
+        color: #2d3436;
+        font-size: 1rem;
+    }
+
+    /* Input field */
+    .input {
+        padding: 0.75rem 1rem;
+        border-radius: 10px;
+        border: 2px solid #dfe6e9;
+        font-size: 1rem;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        background: #ffffff;
+
+        &:focus {
+            border-color: #6c5ce7;
+            box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.2);
+            outline: none;
+        }
+    }
+
+    /* Submit button */
+    .btn-secondary {
+        padding: 0.75rem 1.4rem;
+        background: #6c5ce7;
+        color: #fff;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: 600;
+        width: fit-content;
+        transition: background 0.2s ease, transform 0.1s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+        &:hover {
+            background: color.adjust(#6c5ce7, $lightness: -8%);
+        }
+
+        &:active {
+            transform: scale(0.97);
+        }
+    }
+}
