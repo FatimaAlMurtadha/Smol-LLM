@@ -15,7 +15,7 @@ function App() {
         <header>
           <div className="container">
             <h1 className="title">KK2 Oracle UI</h1>
-            <p>Ladda upp data, fråga och få AI svar om din data</p>
+            <p className="subtitle">Ladda upp data, fråga och få AI svar om din data</p>
           </div>
         </header>
 
